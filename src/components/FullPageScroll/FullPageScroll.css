@@ -1,0 +1,32 @@
+.fps {
+  position: fixed;
+  top: 56px;
+  left: 220px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.fps__track {
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.fps__section {
+  height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 64px;
+}
+
+/* Mobile: remove sidebar offset */
+@media (max-width: 768px) {
+  .fps {
+    left: 0;
+  }
+
+  .fps__section {
+    padding: 32px 24px;
+  }
+}
