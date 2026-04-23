@@ -42,7 +42,7 @@ export default function Sidebar({ sections, activeIndex, onSelect }: SidebarProp
                 onClick={() => handleSelect(i)}
               >
                 <span className="sidebar__dot" />
-                {section.title.split(' — ')[1] || section.title}
+                {section.title}
               </button>
             </li>
           ))}

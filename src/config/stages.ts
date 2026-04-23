@@ -1,7 +1,26 @@
+export interface Block {
+  type:
+    | 'hero'
+    | 'feature-list'
+    | 'steps'
+    | 'two-columns'
+    | 'cta';
+  headline?: string;
+  subheadline?: string;
+  cta?: string;
+  intro?: string;
+  items?: { title: string; description?: string }[];
+  columns?: {
+    heading: string;
+    items: { title: string; description?: string }[];
+  }[];
+}
+
 export interface Section {
   id: string;
   title: string;
   content: string;
+  blocks?: Block[];
 }
 
 export interface Stage {
@@ -50,12 +69,111 @@ const makeSections = (stageLabel: string): Section[] => [
   },
 ];
 
+const seniorsSections: Section[] = [
+  {
+    id: 'about',
+    title: 'About',
+    content: '',
+    blocks: [
+      {
+        type: 'hero',
+        headline: 'Find people and activities near you',
+        subheadline:
+          'Elda is a simple mobile app that helps you connect with others and join activities in your area.',
+        cta: 'Download the app',
+        intro:
+          'Finding company and activities can become more difficult over time. Elda makes it easier to connect with people nearby and take part in everyday activities.',
+      },
+    ],
+  },
+  {
+    id: 'with-elda',
+    title: 'With Elda, you can:',
+    content: '',
+    blocks: [
+      {
+        type: 'feature-list',
+        items: [
+          { title: 'Meet new pals with similar interests' },
+          { title: 'See people in your area' },
+          { title: 'Find activities that match your interests' },
+          { title: 'Arrange to meet in a simple way' },
+          { title: 'Stay socially active' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'how-it-works',
+    title: 'How it works',
+    content: '',
+    blocks: [
+      {
+        type: 'steps',
+        items: [
+          {
+            title: 'Download the app',
+            description: 'Install Elda on your phone',
+          },
+          {
+            title: 'Create a simple profile',
+            description: 'Add basic information about yourself',
+          },
+          {
+            title: 'Find and join activities',
+            description: 'Connect with people and meet in real life',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'why-elda',
+    title: 'Why Elda',
+    content: '',
+    blocks: [
+      {
+        type: 'two-columns',
+        columns: [
+          {
+            heading: 'Designed for easy usage',
+            items: [
+              { title: 'No previous experience required' },
+              { title: 'Step-by-step guidance' },
+            ],
+          },
+          {
+            heading: 'Safe and reliable',
+            items: [
+              { title: 'Real user profiles' },
+              { title: 'Moderated environment' },
+              { title: 'Your personal data is protected' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'get-started',
+    title: 'Get started',
+    content: '',
+    blocks: [
+      {
+        type: 'cta',
+        headline: 'Download Elda and explore what is available near you.',
+        cta: 'Download the app',
+      },
+    ],
+  },
+];
+
 export const stages: Stage[] = [
   {
     id: 'main',
-    label: 'Main',
+    label: 'Seniors',
     path: '/',
-    sections: makeSections('Main'),
+    sections: seniorsSections,
   },
   {
     id: 'stage-1',
