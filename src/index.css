@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
 *,
 *::before,
 *::after {
@@ -10,9 +12,9 @@ html,
 body {
   height: 100%;
   overflow: hidden;
-  background: #050505;
+  background: #0d0620;
   color: #e0e0e0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,7 +24,7 @@ body {
 }
 
 ::selection {
-  background: #333;
+  background: rgba(111, 51, 155, 0.5);
   color: #fff;
 }
 
@@ -36,6 +38,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: rgba(111, 51, 155, 0.4);
   border-radius: 2px;
 }

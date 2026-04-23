@@ -6,8 +6,8 @@
   bottom: 0;
   width: 220px;
   z-index: 90;
-  background: #0a0a0a;
-  border-right: 1px solid #222;
+  background: #130a2a;
+  border-right: 1px solid rgba(111, 51, 155, 0.2);
   padding: 24px 0;
   overflow-y: auto;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -27,7 +27,7 @@
   padding: 12px 20px;
   background: none;
   border: none;
-  color: #666;
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
@@ -36,27 +36,28 @@
 }
 
 .sidebar__item:hover {
-  color: #ccc;
-  background: #151515;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(111, 51, 155, 0.15);
 }
 
 .sidebar__item--active {
   color: #fff;
-  background: #1a1a1a;
+  background: rgba(111, 51, 155, 0.25);
 }
 
 .sidebar__dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #333;
+  background: rgba(111, 51, 155, 0.4);
   flex-shrink: 0;
   transition: background 0.2s, transform 0.2s;
 }
 
 .sidebar__item--active .sidebar__dot {
-  background: #fff;
+  background: #6f339b;
   transform: scale(1.4);
+  box-shadow: 0 0 8px rgba(111, 51, 155, 0.5);
 }
 
 /* ── Hamburger button (mobile only) ── */
@@ -69,8 +70,8 @@
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  border: 1px solid #333;
-  background: #111;
+  border: 1px solid rgba(111, 51, 155, 0.3);
+  background: #200f41;
   cursor: pointer;
   padding: 0;
   align-items: center;
@@ -124,7 +125,7 @@
   position: fixed;
   inset: 0;
   z-index: 85;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(13, 6, 32, 0.7);
 }
 
 /* ── Mobile breakpoint ── */

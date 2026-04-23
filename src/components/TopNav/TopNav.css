@@ -9,15 +9,30 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  background: #000;
-  border-bottom: 1px solid #222;
+  background: linear-gradient(135deg, #200f41 0%, #1a0c36 100%);
+  border-bottom: 1px solid rgba(111, 51, 155, 0.25);
+  box-shadow: 0 2px 20px rgba(32, 15, 65, 0.5);
 }
 
 .top-nav__brand {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: 'Etna', 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color 0.25s, text-shadow 0.25s;
+  min-width: 100px;
+}
+
+.top-nav__brand:hover {
+  color: #c49bef;
+  text-shadow: 0 0 16px rgba(111, 51, 155, 0.6);
 }
 
 .top-nav__list {
@@ -26,6 +41,13 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-nav__spacer {
+  min-width: 100px;
 }
 
 .top-nav__link {
@@ -34,17 +56,18 @@
   border-radius: 6px;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #888;
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   transition: color 0.2s, background 0.2s;
 }
 
 .top-nav__link:hover {
   color: #fff;
-  background: #1a1a1a;
+  background: rgba(111, 51, 155, 0.25);
 }
 
 .top-nav__link--active {
   color: #fff;
-  background: #222;
+  background: rgba(111, 51, 155, 0.4);
+  box-shadow: 0 0 12px rgba(111, 51, 155, 0.2);
 }

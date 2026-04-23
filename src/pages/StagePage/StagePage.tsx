@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import type { Stage } from '../../config/stages';
 import { useFullPageScroll } from '../../hooks/useFullPageScroll';
 import Sidebar from '../../components/Sidebar/Sidebar';
@@ -11,9 +12,17 @@ interface StagePageProps {
 }
 
 export default function StagePage({ stage }: StagePageProps) {
+  const location = useLocation();
   const { activeIndex, scrollTo, containerRef } = useFullPageScroll(
     stage.sections.length,
   );
+
+  // Reset scroll to section 1 when logo is clicked (even on same route)
+  useEffect(() => {
+    if (location.state?.resetScroll) {
+      scrollTo(0);
+    }
+  }, [location.state?.resetScroll, scrollTo]);
 
   const sectionElements = useMemo(
     () =>
